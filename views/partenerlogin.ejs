@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Timmana&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #C72ED9, #0E00CC);
+            display: flex;
+            margin: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none; /* Remove underline */
+            color: white;
+        }
+        .lcontainer{
+            position: fixed;
+            top: 2px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+        nav {
+            width: 60px;
+            background: linear-gradient(to bottom, #C72ED9, #3E21F6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        nav.expanded {
+            width: 200px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        nav a span {
+            margin-left: 10px;
+            display: none;
+        }
+        nav.expanded a span {
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .toggle-btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.1)
+        }
+        .toggle-btn:focus,
+        .toggle-btn:active {
+            outline: none;
+            box-shadow: none;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .rectangle {
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            margin: 10px 0;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .rectangle img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .rectangle .username {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .rectangle .join-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .rectangle .join-btn:hover {
+            background-color: #0056b3;
+        }
+        .title {
+            font-family: "Timmana", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 6em;
+            background: White;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-align: center;
+            margin: 20px 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<nav id="navbar">
+    <button class="toggle-btn" onclick="toggleNav()">☰</button>
+    <a href="/"><i class="bi bi-globe2"></i><span>Home</span></a>
+    <a href="https://discord.gg/6uTbbdbchv"><i class="bi bi-discord"></i><span>Discord</span></a>
+    <a href="https://discord.com/oauth2/authorize?client_id=1264887947585388621"><i class="bi bi-robot"></i><span>Add Bot</span></a>
+</nav>
+<div class="main-content">
+    <div class="lcontainer">
+        <a href="/auth/discord">Login</a>
+    </div>
+    <div class="title">KAIKO</div>
+    <div class="rectangle">
+        <img src="https://via.placeholder.com/50" alt="Logo">
+        <div class="username">Username</div>
+        <button class="join-btn">Join</button>
+    </div>
+    <div class="rectangle">
+        <img src="https://via.placeholder.com/50" alt="Logo">
+        <div class="username">Username</div>
+        <button class="join-btn">Join</button>
+    </div>
+    <div class="rectangle">
+        <img src="https://via.placeholder.com/50" alt="Logo">
+        <div class="username">Username</div>
+        <button class="join-btn">Join</button>
+    </div>
+</div>
+<script>
+    function toggleNav() {
+        document.getElementById('navbar').classList.toggle('expanded');
+    }
+</script>
+</body>
+</html>
